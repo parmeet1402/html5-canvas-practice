@@ -2,7 +2,7 @@
 ## General
 |Method Name & Syntax|Usage|
 |--------------------|-----|
-|getContext()|Getting context of a canvas|
+|`getContext()`|Getting context of a canvas|
 
 ## Image
 |Method Name & Syntax|Usage|
@@ -40,6 +40,13 @@
 |`lineWidth = <width>`|Sets the font's stroke's width|
 |`strokeText(<string>,x,y)`|Draws a string [with stroke color]|
 |`fillText(<string>,x,y)`|Draws a string [with fill color]|
+
+## Pixel Manipulation
+|Method Name & Syntax|Usage|
+|--------------------|-----|
+|`getImageData(x0,y0,x1,y1)`|Gets the image data from (x0,y0) to (x1,y1)|
+|`setImageData(x0,y0,x1,y1)`| Sets the image data from (x0,y0) to (x1,y1)|
+|`putImageData(imageData,x,y)`|puts the specified image data in (x,y)|
 
 ## Miscellaneous
 |Method Name & Syntax|Usage|

@@ -41,11 +41,10 @@ context.fillText("CANVAS MEMES!", 400, 300);
 
  */
 /* *********************************
-        Photo Manipulation
+        Pixel Manipulation
 *********************************** */
 // Convert every 10th pixel green
 
-/* 
 const imageData = context.getImageData(0, 0, 1000, 1000);
 const numberOfPixels = imageData.data.length / 4;
 for (let i = 0; i < numberOfPixels; i++) {
@@ -57,9 +56,3 @@ for (let i = 0; i < numberOfPixels; i++) {
   }
 }
 context.putImageData(imageData, 0, 0);
- */
-
-
- // convert image to grayscale
- 
-

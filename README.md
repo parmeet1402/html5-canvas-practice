@@ -9,7 +9,7 @@
 |--------------------|-----|
 |`drawImage(image,x,y,width,height)`|Addding image to canvas. [called inside onload method of image]|
 
-## Shapes
+## Shapes 
 |Method Name & Syntax|Usage|
 |--------------------|-----|
 |`strokeRect(x,y,width,height)`|Create a rectangle with outline|
@@ -19,6 +19,7 @@
 |`lineTo(x,y)`|Forms a path from current point to the specified point|
 |`fill()`|Polygon with Fill [used at the end]|
 |`stroke()`|Polygon with Stroke [used at the end]|
+|`arc(x,y,radius,startingAngle, endingAngle, counterClockwise)`| Creates an arc(path). beginPath() must be called before it and stroke() or fill() is used after it.|
 
 ## Color
 |Method Name & Syntax|Usage|
@@ -45,6 +46,13 @@
 |Method Name & Syntax|Usage|
 |--------------------|-----|
 |`getImageData(x0,y0,x1,y1)`|Gets the image data from (x0,y0) to (x1,y1)|
+|`setImageData(x0,y0,x1,y1)`| Sets the image data from (x0,y0) to (x1,y1)|
+|`putImageData(imageData,x,y)`|puts the specified image data in (x,y)|
+
+## Animation
+|Method Name & Syntax|Usage|
+|--------------------|-----|
+|`requestAnimationFrame(loopFuction)`|Helps run the loop. Must be used clearRect() after this for clearing the canvas at every render.|
 |`setImageData(x0,y0,x1,y1)`| Sets the image data from (x0,y0) to (x1,y1)|
 |`putImageData(imageData,x,y)`|puts the specified image data in (x,y)|
 

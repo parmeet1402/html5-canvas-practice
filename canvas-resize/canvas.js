@@ -4,6 +4,23 @@ const context = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+// Mouse object for keeping coordinates
+let mouse = {
+  x: undefined,
+  y: undefined
+};
+
+// Maximum radius and Minimum radius
+const maxRadius = 50;
+const minRadius = 10;
+
+// register event listeners
+window.addEventListener("mousemove", event => {
+  mouse.x = event.x;
+  mouse.y = event.y;
+  console.log(mouse);
+});
+
 class Circle {
   constructor(x, y, dx, dy, radius) {
     this.x = x;
@@ -24,6 +41,7 @@ class Circle {
     );
     context.strokeStyle = "yellow";
     context.stroke();
+    context.fill();
   }
 
   update() {
@@ -36,6 +54,21 @@ class Circle {
     }
     this.x += this.dx;
     this.y += this.dy;
+
+    // interactivity
+
+    if (
+      mouse.x - this.x < 50 && // Right
+      mouse.x - this.x > -50 && // Left
+      mouse.y - this.y < 50 && // Bottom
+      mouse.y - this.y > -50 // Top
+    ) {
+      if (this.radius < maxRadius) {
+        this.radius++;
+      }
+    } else if (this.radius > minRadius) {
+      this.radius--;
+    }
   }
 }
 let circleArray = [];
@@ -46,8 +79,8 @@ for (let i = 0; i < 100; i++) {
   let y = Math.random() * (window.innerHeight - 2 * radius) + radius;
 
   //velocity
-  let dx = (Math.random() - 0.5)*4;
-  let dy =( Math.random() - 0.5 )*4;
+  let dx = (Math.random() - 0.5) * 4;
+  let dy = (Math.random() - 0.5) * 4;
   circleArray.push(new Circle(x, y, dx, dy, radius));
 }
 
@@ -58,8 +91,8 @@ function animate() {
   context.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
   for (let i = 0; i < circleArray.length; i++) {
-    circleArray[i].draw();
     circleArray[i].update();
+    circleArray[i].draw();
   }
 }
 animate();
